@@ -108,7 +108,7 @@
 
 -- Turns column mode on but headers off
 .mode column
-.headers on
+.headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 DROP TABLE IF EXISTS roles;
