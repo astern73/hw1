@@ -187,7 +187,10 @@ INSERT INTO roles (movie_id, actor_id, character_name) VALUES
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+
+SELECT title, year, rating, studio
+FROM movies
+ORDER BY year;
 
 -- Prints a header for the cast output
 .print ""
@@ -199,4 +202,16 @@ INSERT INTO roles (movie_id, actor_id, character_name) VALUES
 -- The SQL statement for the cast output
 -- TODO!
 
--- Create the 
+SELECT 
+    movies.title, 
+    actors.name, 
+    roles.character_name
+FROM 
+    roles
+JOIN 
+    movies ON roles.movie_id = movies.id
+JOIN 
+    actors ON roles.actor_id = actors.id
+ORDER BY 
+    movies.title, 
+    roles.id;
